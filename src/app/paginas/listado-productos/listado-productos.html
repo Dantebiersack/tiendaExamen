@@ -3,7 +3,9 @@
     <input 
       type="text" 
       placeholder="Buscar productos..." 
-      (input)="buscar($any($event.target).value)" 
+      [value]="textoBusqueda"
+       [(ngModel)]="textoBusqueda"
+  (input)="buscar(textoBusqueda)"
       class="w-full px-4 py-2 border border-gray-600 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-purple-500"
     >
   </div>

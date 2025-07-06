@@ -9,7 +9,7 @@ import { Producto } from '../modelos/producto.model';
 export class ProductosService {
   private apiUrl = 'https://localhost:7222/api/productos'; // cambia el PORT si es necesario
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getTodos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.apiUrl);
@@ -21,5 +21,9 @@ export class ProductosService {
 
   getPorCategoria(categoriaId: number): Observable<Producto[]> {
     return this.http.get<Producto[]>(`https://localhost:7222/api/categorias/${categoriaId}/productos`);
+  }
+
+  buscarPorNombreYCategoria(nombre: string, idCategoria: number) {
+    return this.http.get<Producto[]>(`https://localhost:7222/api/productos/buscar?nombre=${nombre}&categoria=${idCategoria}`);
   }
 }
