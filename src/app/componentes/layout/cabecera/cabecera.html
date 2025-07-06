@@ -1,0 +1,32 @@
+<header class="bg-gray-900 text-white p-4 flex justify-between items-center shadow-md">
+  <div class="flex items-center gap-3">
+    <img src="assets/logoDuelzone.png" alt="Logo Duel Zone" class="w-15 h-15 rounded shadow" />
+    <h1 class="text-xl font-bold tracking-wide">
+      <a routerLink="/" class="hover:text-purple-400 transition-colors duration-300">
+        Duel Zone
+      </a>
+    </h1>
+  </div>
+  <nav class="space-x-4">
+    <a 
+      routerLink="/" 
+      routerLinkActive="text-purple-400 border-b-2 border-purple-500"
+      class="transition-colors duration-300 hover:text-purple-300 pb-1"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >Inicio</a>
+
+    <a 
+      routerLink="/productos" 
+      routerLinkActive="text-purple-400 border-b-2 border-purple-500"
+      class="transition-colors duration-300 hover:text-purple-300 pb-1"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >Productos</a>
+
+    <a 
+      routerLink="/contacto" 
+      routerLinkActive="text-purple-400 border-b-2 border-purple-500"
+      class="transition-colors duration-300 hover:text-purple-300 pb-1"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >Contacto</a>
+  </nav>
+</header>

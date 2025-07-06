@@ -1,0 +1,52 @@
+<section class="p-4 bg-gray-800 text-white">
+  <div class="mb-4">
+    <input 
+      type="text" 
+      placeholder="Buscar productos..." 
+      (input)="buscar($any($event.target).value)" 
+      class="w-full px-4 py-2 border border-gray-600 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-purple-500"
+    >
+  </div>
+
+  <div class="mb-6 flex flex-wrap gap-2">
+    <button 
+      (click)="cargarTodos(); categoriaSeleccionada = null"
+      [ngClass]="categoriaSeleccionada === null ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-purple-500 hover:text-white'"
+      class="px-4 py-2 rounded-full transition"
+    >Todos</button>
+
+    <button 
+      (click)="filtrarPorCategoria(1); categoriaSeleccionada = 1"
+      [ngClass]="categoriaSeleccionada === 1 ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-purple-500 hover:text-white'"
+      class="px-4 py-2 rounded-full transition"
+    >Cartas</button>
+
+    <button 
+      (click)="filtrarPorCategoria(2); categoriaSeleccionada = 2"
+      [ngClass]="categoriaSeleccionada === 2 ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-purple-500 hover:text-white'"
+      class="px-4 py-2 rounded-full transition"
+    >Protectores</button>
+
+    <button 
+      (click)="filtrarPorCategoria(3); categoriaSeleccionada = 3"
+      [ngClass]="categoriaSeleccionada === 3 ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-purple-500 hover:text-white'"
+      class="px-4 py-2 rounded-full transition"
+    >Deck Boxes</button>
+
+    <button 
+      (click)="filtrarPorCategoria(4); categoriaSeleccionada = 4"
+      [ngClass]="categoriaSeleccionada === 4 ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-purple-500 hover:text-white'"
+      class="px-4 py-2 rounded-full transition"
+    >Playmats</button>
+
+    <button 
+      (click)="filtrarPorCategoria(5); categoriaSeleccionada = 5"
+      [ngClass]="categoriaSeleccionada === 5 ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-purple-500 hover:text-white'"
+      class="px-4 py-2 rounded-full transition"
+    >Figuras</button>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <app-producto-card *ngFor="let producto of productos" [producto]="producto"></app-producto-card>
+  </div>
+</section>
